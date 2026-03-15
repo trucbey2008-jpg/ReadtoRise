@@ -6,18 +6,36 @@ text-align:center;
 }
 
 header{
-background:#e8e2d8;
-padding:30px;
+background:#ece6dc;
+padding:40px 20px;
+text-align:center;
 }
 
 header h1{
+font-size:36px;
+letter-spacing:1px;
 margin:0;
 font-weight:500;
 }
 
 header p{
+margin-top:10px;
 color:#666;
+font-size:16px;
 }
+
+
+body{
+margin:0;
+font-family:Georgia, serif;
+background:#f4f1ec;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+}
+
 
 .card{
 position:relative;
