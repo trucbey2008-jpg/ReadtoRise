@@ -40,6 +40,41 @@ color:#7a6e64;
 font-size:16px;
 }
 
+
+/* STICKY LANGUAGE TOGGLE */
+
+.lang-toggle{
+position:sticky;
+top:0;
+z-index:1000;
+
+background:#f4f1ec;
+padding:10px 0;
+border-bottom:1px solid #e0d9cf;
+
+text-align:center;
+}
+
+/* keep buttons clean */
+
+.lang-toggle button{
+margin:0 8px;
+padding:6px 16px;
+background:#ece6dc;
+border:none;
+cursor:pointer;
+font-size:12px;
+letter-spacing:1px;
+transition:all 0.3s ease;
+}
+
+.lang-toggle button.active{
+background:#3b2f2f;
+color:white;
+}
+
+
+
 /* ================= HERO ================= */
 
 .hero{
