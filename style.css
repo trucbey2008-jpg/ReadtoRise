@@ -40,22 +40,21 @@ color:#7a6e64;
 font-size:16px;
 }
 
-
-/* STICKY LANGUAGE TOGGLE */
+/* ================= STICKY LANGUAGE ================= */
 
 .lang-toggle{
 position:sticky;
 top:0;
 z-index:1000;
 
-background:#f4f1ec;
+background:rgba(244,241,236,0.9);
+backdrop-filter:blur(6px);
+
 padding:10px 0;
 border-bottom:1px solid #e0d9cf;
 
 text-align:center;
 }
-
-/* keep buttons clean */
 
 .lang-toggle button{
 margin:0 8px;
@@ -72,8 +71,6 @@ transition:all 0.3s ease;
 background:#3b2f2f;
 color:white;
 }
-
-
 
 /* ================= HERO ================= */
 
@@ -121,7 +118,7 @@ color:#7a6e64;
 margin-top:10px;
 }
 
-/* ================= GRID SYSTEM ================= */
+/* ================= GRID ================= */
 
 .grid{
 display:grid;
@@ -156,7 +153,7 @@ transform:translateY(-6px);
 box-shadow:0 30px 60px rgba(0,0,0,0.18);
 }
 
-/* CARD SIZES */
+/* CARD VARIANTS */
 
 .card-large{
 width:90%;
@@ -186,7 +183,7 @@ height:360px;
 transform:scale(1.06);
 }
 
-/* OVERLAY DARK LAYER */
+/* OVERLAY */
 
 .card::after{
 content:"";
@@ -209,7 +206,6 @@ text-align:left;
 max-width:320px;
 z-index:2;
 
-/* animation */
 opacity:0;
 transform:translateY(10px);
 transition:all 0.6s ease;
@@ -318,7 +314,7 @@ color:#7a6e64;
 font-size:14px;
 }
 
-/* ================= FADE-IN ANIMATION ================= */
+/* ================= FADE-IN ================= */
 
 .fade-in{
 opacity:0;
@@ -354,20 +350,17 @@ line-height:1.8;
 
 }
 
+/* ================= LANGUAGE FIX ================= */
+
 .vi{
 font-family:"Inter", sans-serif;
 letter-spacing:0.2px;
 }
 
-
-/* Force Vietnamese titles to use Inter */
-
-h1.vi, h2.vi, h3.vi {
-  font-family: "Inter", sans-serif !important;
+h1.vi, h2.vi, h3.vi{
+font-family:"Inter", sans-serif !important;
 }
 
-
 h2.vi{
-letter-spacing:0.2px;
 line-height:1.5;
 }
