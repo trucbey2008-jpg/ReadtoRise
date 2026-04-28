@@ -1,20 +1,25 @@
-/* BASE */
+/* ================= BASE ================= */
+
+html{
+scroll-behavior:smooth;
+}
 
 body{
 margin:0;
 font-family:"Inter", sans-serif;
 background:#f4f1ec;
 color:#2f2a26;
+letter-spacing:0.2px;
 }
 
-/* TYPOGRAPHY */
+/* ================= TYPOGRAPHY ================= */
 
 h1,h2,h3{
 font-family:"Libre Baskerville", serif;
 margin:0;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 
 header{
 background:#ece6dc;
@@ -31,11 +36,11 @@ color:#3b2f2f;
 
 header p{
 margin-top:10px;
-color:#666;
+color:#7a6e64;
 font-size:16px;
 }
 
-/* HERO */
+/* ================= HERO ================= */
 
 .hero{
 padding:120px 20px;
@@ -62,11 +67,11 @@ color:#7a6e64;
 margin-bottom:20px;
 }
 
-/* SECTION TITLE */
+/* ================= SECTION TITLE ================= */
 
 .section-title{
 text-align:center;
-margin:80px 0 40px 0;
+margin:100px 0 40px 0;
 }
 
 .section-title h2{
@@ -77,18 +82,29 @@ color:#3b2f2f;
 }
 
 .section-title p{
-color:#777;
+color:#7a6e64;
 margin-top:10px;
 }
 
-/* CONTAINER */
+/* ================= GRID SYSTEM ================= */
 
-.container{
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
 max-width:1100px;
-margin:auto;
+margin:60px auto;
 }
 
-/* CARD (EDITORIAL STYLE) */
+.grid.reverse{
+direction:rtl;
+}
+
+.grid.reverse .overlay{
+direction:ltr;
+}
+
+/* ================= CARD ================= */
 
 .card{
 position:relative;
@@ -97,21 +113,45 @@ margin:60px auto;
 overflow:hidden;
 border-radius:6px;
 box-shadow:0 20px 40px rgba(0,0,0,0.15);
+transition:transform 0.5s ease, box-shadow 0.5s ease;
 }
+
+.card:hover{
+transform:translateY(-6px);
+box-shadow:0 30px 60px rgba(0,0,0,0.18);
+}
+
+/* CARD SIZES */
+
+.card-large{
+width:90%;
+margin:80px auto;
+}
+
+.card-small{
+width:100%;
+margin:0;
+}
+
+/* IMAGE */
 
 .card img{
 width:100%;
 height:480px;
 object-fit:cover;
 display:block;
-transition:transform 0.6s ease;
+transition:transform 1s ease;
+}
+
+.card-small img{
+height:360px;
 }
 
 .card:hover img{
-transform:scale(1.05);
+transform:scale(1.06);
 }
 
-/* DARK OVERLAY */
+/* OVERLAY DARK LAYER */
 
 .card::after{
 content:"";
@@ -133,6 +173,16 @@ color:white;
 text-align:left;
 max-width:320px;
 z-index:2;
+
+/* animation */
+opacity:0;
+transform:translateY(10px);
+transition:all 0.6s ease;
+}
+
+.card:hover .overlay{
+opacity:1;
+transform:translateY(0);
 }
 
 .overlay p{
@@ -152,7 +202,7 @@ font-style:italic;
 line-height:1.4;
 }
 
-/* BUTTON */
+/* ================= BUTTON ================= */
 
 button{
 margin-top:15px;
@@ -163,38 +213,52 @@ border:none;
 letter-spacing:1px;
 font-size:12px;
 cursor:pointer;
-transition:opacity 0.3s ease;
+border-radius:2px;
+transition:all 0.3s ease;
 }
 
 button:hover{
-opacity:0.85;
+background:#2a2420;
+transform:translateY(-1px);
 }
 
-/* DIVIDER */
+/* ================= DIVIDER ================= */
 
 .divider{
 width:60px;
 height:2px;
 background:#8b7d6b;
-margin:60px auto;
-opacity:0.6;
+margin:80px auto;
+opacity:0.5;
 }
 
-/* ARTICLE PAGE */
+/* ================= ARTICLE ================= */
 
 .article{
 max-width:720px;
-margin:80px auto;
-line-height:1.9;
-font-size:18px;
+margin:100px auto;
+line-height:2;
+font-size:19px;
 color:#2f2a26;
+padding:0 20px;
 }
 
-/* QUOTE SECTION */
+.article h2{
+font-size:28px;
+margin-bottom:20px;
+line-height:1.4;
+}
+
+.article p{
+margin-top:10px;
+color:#4a3f36;
+}
+
+/* ================= QUOTE ================= */
 
 .quote{
 max-width:700px;
-margin:80px auto;
+margin:100px auto;
 font-family:"Libre Baskerville", serif;
 font-style:italic;
 font-size:22px;
@@ -210,11 +274,47 @@ letter-spacing:1px;
 color:#7a6e64;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 
 .footer{
 text-align:center;
 padding:40px 20px;
 color:#7a6e64;
 font-size:14px;
+}
+
+/* ================= FADE-IN ANIMATION ================= */
+
+.fade-in{
+opacity:0;
+transform:translateY(30px);
+transition:all 1s ease;
+}
+
+.fade-in.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width:768px){
+
+.grid{
+grid-template-columns:1fr;
+}
+
+.card{
+width:90%;
+}
+
+.card img{
+height:300px;
+}
+
+.article{
+font-size:17px;
+line-height:1.8;
+}
+
 }
