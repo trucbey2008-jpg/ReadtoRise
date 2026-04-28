@@ -324,3 +324,15 @@ font-family:"Inter", sans-serif;
 letter-spacing:0.2px;
 }
 
+
+/* Force Vietnamese titles to use Inter */
+
+h1.vi, h2.vi, h3.vi {
+  font-family: "Inter", sans-serif !important;
+}
+
+
+h2.vi{
+letter-spacing:0.2px;
+line-height:1.5;
+}
