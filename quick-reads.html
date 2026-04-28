@@ -7,11 +7,33 @@
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
+
+<style>
+.lang-toggle{
+text-align:center;
+margin:40px 0;
+}
+
+.lang-toggle button{
+margin:0 8px;
+padding:8px 18px;
+background:#ece6dc;
+border:none;
+cursor:pointer;
+font-size:13px;
+letter-spacing:1px;
+}
+
+.lang-toggle button.active{
+background:#3b2f2f;
+color:white;
+}
+</style>
+
 </head>
 
 <body>
 
-<!-- HEADER -->
 <header>
 <h1>READ TO RISE</h1>
 <p>Quick Reads</p>
@@ -19,21 +41,36 @@
 
 <div class="divider"></div>
 
-<!-- PAGE TITLE -->
+<!-- LANGUAGE -->
+<div class="lang-toggle">
+<button id="btn-en" onclick="setLanguage('en')">EN</button>
+<button id="btn-vi" onclick="setLanguage('vi')">VI</button>
+</div>
+
 <section class="section-title">
-<h2>Quick Reads</h2>
-<p>Ideas you can absorb in under 20 seconds</p>
+<h2 class="en">Quick Reads</h2>
+<h2 class="vi">Đọc Nhanh</h2>
+
+<p class="en">Ideas you can absorb in under 20 seconds</p>
+<p class="vi">Những ý tưởng ngắn để suy ngẫm</p>
 </section>
 
 <!-- POST 1 -->
 <div class="article">
 
-<h2>Most people read to finish, not to understand.</h2>
+<h2 class="en">Most people read to finish, not to understand.</h2>
+<h2 class="vi">Hầu hết mọi người đọc để hoàn thành, không phải để hiểu.</h2>
 
-<p>
+<p class="en">
 Reading without reflection creates the illusion of knowledge.  
-When we rush through pages, we collect words but fail to shape judgement.  
-Understanding begins only when we pause and think.
+When we rush, we collect words but fail to shape judgement.  
+Understanding begins only when we pause.
+</p>
+
+<p class="vi">
+Đọc mà không suy ngẫm chỉ tạo ra ảo giác về tri thức.  
+Khi đọc vội, ta chỉ thu thập từ ngữ mà không hình thành tư duy.  
+Sự hiểu biết chỉ bắt đầu khi ta dừng lại.
 </p>
 
 </div>
@@ -43,11 +80,17 @@ Understanding begins only when we pause and think.
 <!-- POST 2 -->
 <div class="article">
 
-<h2>Knowledge without reflection is an illusion.</h2>
+<h2 class="en">Knowledge without reflection is an illusion.</h2>
+<h2 class="vi">Tri thức không có suy ngẫm chỉ là ảo tưởng.</h2>
 
-<p>
-Accumulating information is easy, but transforming it into insight requires effort.  
-Without reflection, knowledge remains external and never becomes part of our thinking.
+<p class="en">
+Information is easy to gather, but insight requires effort.  
+Without reflection, knowledge remains external and never becomes yours.
+</p>
+
+<p class="vi">
+Thông tin dễ tích lũy, nhưng hiểu biết cần nỗ lực.  
+Nếu không suy ngẫm, tri thức sẽ mãi ở bên ngoài và không thuộc về bạn.
 </p>
 
 </div>
@@ -57,28 +100,48 @@ Without reflection, knowledge remains external and never becomes part of our thi
 <!-- POST 3 -->
 <div class="article">
 
-<h2>Reading is not consumption. It is transformation.</h2>
+<h2 class="en">Reading is not consumption. It is transformation.</h2>
+<h2 class="vi">Đọc không phải là tiêu thụ, mà là sự chuyển hóa.</h2>
 
-<p>
-The purpose of reading is not to gather more ideas, but to refine how we think.  
-A single insight, deeply understood, is more valuable than a hundred forgotten pages.
+<p class="en">
+The goal is not more ideas, but better thinking.  
+One insight deeply understood outweighs many forgotten pages.
+</p>
+
+<p class="vi">
+Mục tiêu không phải là nhiều ý tưởng hơn, mà là tư duy tốt hơn.  
+Một hiểu biết sâu sắc có giá trị hơn nhiều trang sách bị quên lãng.
 </p>
 
 </div>
 
 <div class="divider"></div>
 
-<!-- BACK LINK -->
-<div style="text-align:center; margin:60px 0;">
+<!-- BACK -->
+<div style="text-align:center; margin:80px 0;">
 <button onclick="location.href='index.html'">BACK TO HOME</button>
 </div>
 
-<!-- FOOTER -->
 <div class="footer">
 <p>© 2026 ReadtoRise — Designed for thoughtful readers</p>
 </div>
 
+<script>
+function setLanguage(lang){
+document.querySelectorAll('.en').forEach(el => {
+el.style.display = (lang === 'en') ? 'block' : 'none';
+});
+document.querySelectorAll('.vi').forEach(el => {
+el.style.display = (lang === 'vi') ? 'block' : 'none';
+});
+
+document.getElementById('btn-en').classList.remove('active');
+document.getElementById('btn-vi').classList.remove('active');
+document.getElementById('btn-' + lang).classList.add('active');
+}
+
+setLanguage('en');
+</script>
+
 </body>
-
 </html>
-
